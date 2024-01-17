@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="../css/NCCC.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/NCCC.css') }}">
 	<title> New Celestial Church Of Christ </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +13,9 @@
 		<div id="container">
 		
             <header>
-                <a href="../index.html">
+                <a href="{{ url_for('index') }}">
                     <img 
-                    src="../images/new.jpg" alt="Church Logo" />
+                    src="{{ url_for('static', filename='images/new.jpg') }}" alt="Church Logo" />
                 </a>
                 <p> New Celestial Church Of Christ </p>
             </header>
@@ -24,9 +24,9 @@
             
             <nav>
                 <ul>
-                    <li><a href="./about_us.html"> About US</a></li>
-                    <li><a href="./events.html"> Event </a></li>
-                    <li><a href="./contact_us.html"> Contact US </a></li>
+                    <li><a href="{{ url_for('about_us') }}"> About US</a></li>
+					<li><a href="{{ url_for('events') }}"> Event </a></li>
+					<li><a href="{{ url_for('contact_us') }}"> Contact US </a></li>
                 </ul>
             </nav>
 		
@@ -46,11 +46,12 @@
 						<input type = "email" name = "email" id = "email">
 						
 						<label for = "phone"> Phone Number: </label>
-						<textarea id = "comments" name = "comments" rows = "3" cols = "25">
-						</textarea>
+						<input type = "tel" name = "phone" id = "phone">
+						
 						
 						<label for = "comments"> Comments: </label>
-						<input type = "tel" name = "phone" id = "phone">
+						<textarea id = "comments" name = "comments" rows = "3" cols = "25">
+						</textarea>
 						
 						<input type = "submit" value = "Submit">
 						<input type = "reset" value = "Reset">
@@ -59,7 +60,7 @@
 		</main>
 		
 		<footer>
-			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2020. All Rights Reserved.</p>
+			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2023. All Rights Reserved.</p>
 			<p><a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a></p>
 		</footer>
 		

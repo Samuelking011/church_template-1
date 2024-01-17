@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="../css/NCCC.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/NCCC.css') }}">
 	<title> New Celestial Church Of Christ </title>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,9 +13,9 @@
 		<div id="container">
 		
             <header>
-                <a href="../index.html">
+                <a href="{{ url_for('index') }}">
                     <img 
-                    src="../images/new.jpg" alt="Church Logo" />
+                    src="{{ url_for('static', filename='images/new.jpg') }}" alt="Church Logo" />
                 </a>
                 <p> New Celestial Church Of Christ </p>
             </header>
@@ -24,9 +24,9 @@
             
             <nav>
                 <ul>
-                    <li><a href="./about_us.html"> About US</a></li>
-                    <li><a href="./events.html"> Event </a></li>
-                    <li><a href="./contact_us.html"> Contact US </a></li>
+                    <li><a href="{{ url_for('about_us') }}"> About US</a></li>
+					<li><a href="{{ url_for('events') }}"> Event </a></li>
+					<li><a href="{{ url_for('contact_us') }}"> Contact US </a></li>
                 </ul>
             </nav>
 		
@@ -63,42 +63,42 @@
 								<td> SUNDAY SERVICE </td>
 								<td> Every Sunday </td>
 								<td> 10:00am </td>
-								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+								<td> 10110 Belknap Rd, Sugar Land, TX 77498 </td>
 							</tr>
 							
 							<tr>
 								<td> VICTORY SERVICE </td>
 								<td> Every Tuesday </td>
 								<td> 7:00pm </td>
-								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+								<td> 10110 Belknap Rd, Sugar Land, TX 77498 </td>
 							</tr>
 							
 							<tr>
 								<td> SEEKERS' SERVICE </td>
 								<td> Every Wednesday </td>
 								<td> 9:00am </td>
-								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+								<td> 10110 Belknap Rd, Sugar Land, TX 77498 </td>
 							</tr>
 							
 							<tr>
 								<td> MERCY DAY SERVICE </td>
 								<td> Every Wednesday </td>
 								<td> 7:00pm </td>
-								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+								<td> 10110 Belknap Rd, Sugar Land, TX 77498 </td>
 							</tr>
 							
 							<tr>
 								<td> POWER SERVICE </td>
 								<td> Every Friday </td>
 								<td> 7:00pm </td>
-								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+								<td> 10110 Belknap Rd, Sugar Land, TX 77498 </td>
 							</tr>
 							
 							<tr>
 								<td> POWER VIGIL </td>
 								<td> Every Friday Night </td>
 								<td> 11:00pm </td>
-								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+								<td> 10110 Belknap Rd, Sugar Land, TX 77498 </td>
 							</tr>
 					</table>
 								
@@ -106,7 +106,7 @@
 		</main>
 		
 		<footer>
-			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2020. All Rights Reserved.</p>
+			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2023. All Rights Reserved.</p>
 			<p><a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a></p>
 		</footer>
 		

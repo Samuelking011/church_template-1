@@ -2,7 +2,7 @@
 
 <html lang="en">
 <head>
-	<link rel="stylesheet" href="./css/NCCC.css">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/NCCC.css') }}">
 	<title> New Celestial Church Of Christ </title>
 	<meta charset="utf-8">
 </head>
@@ -14,7 +14,7 @@
 		<header>
             <a href="index.html">
                 <img 
-                src="./images/new.jpg" alt="Church Logo" />
+                src="{{ url_for('static', filename='images/new.jpg') }}" alt="Church Logo" />
             </a>
 			<p> New Celestial Church Of Christ </p>
 		</header>
@@ -23,16 +23,16 @@
 		
 		<nav>
 			<ul>
-				<li><a href="./html/about_us.html"> About US</a></li>
-				<li><a href="./html/events.html"> Event </a></li>
-				<li><a href="./html/contact_us.html"> Contact US </a></li>
+				<li><a href="{{ url_for('about_us') }}"> About US</a></li>
+				<li><a href="{{ url_for('events') }}"> Event </a></li>
+				<li><a href="{{ url_for('contact_us') }}"> Contact US </a></li>
 			</ul>
 		</nav>
 		
 		<main>
 			<div class="video">
 				<video autoplay controls width="300" height="150">
-					<source src = "video.mp4" type = "video/mp4">
+					<source src = "{{ url_for('static', filename='video.mp4') }}" type = "video/mp4">
 					<source src = "video.ogg" type = "video/ogg">
 					<source src = "video.webm" type = "video/webm">
 					<p> Your browser does not . </p>
@@ -64,7 +64,7 @@
 		</main>
 		
 		<footer>
-			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2020. All Rights Reserved.</p>
+			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2023. All Rights Reserved.</p>
 			<p><a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a></p>
 		</footer>
 		
