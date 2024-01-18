@@ -1,7 +1,8 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, flash
 import mysql.connector
 
 app = Flask(__name__)
+app.secret_key = 'your_secret_key'  # Change this to a random, secure string
 
 #MySQL Configuration
 db = mysql.connector.connect(
@@ -54,11 +55,27 @@ def submit_prayer_request():
         name = request.form['name']
         request_text = request.form['request_text']
 
-        # Insert the prayer request into the database
-        cursor.execute("INSERT INTO prayer_requests (name, request_text) VALUES (%s, %s)", (name, request_text))
-        db.commit()
+        # Input validation
+        if not name or not request_text:
+            flash('Please fill in all field.', 'error')
+            return redirect(url_for('prayer_request'))
+        
+        try:
+            #Insert the prayer request into the database
+            cursor.execute("INSERT INTO prayer_requests (name, request_text) VALUES (%s, %s)", (name, request_text))
+            db.commit()
+
+            flash('Prayer request submitted successfully!', 'success')
+        except mysql.connector.Error as err:
+            flash(f"Error: {err}", 'error')
 
         return redirect(url_for('prayer_request'))
+
+        # Insert the prayer request into the database
+        #cursor.execute("INSERT INTO prayer_requests (name, request_text) VALUES (%s, %s)", (name, request_text))
+        #db.commit()
+
+        #return redirect(url_for('prayer_request'))
 
 if __name__ == '__main__':
     app.run(debug=True)
