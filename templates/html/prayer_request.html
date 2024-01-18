@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/NCCC.css') }}">
+    <title> New Celestial Church Of Christ </title>
+    <meta charset="utf-8">
+    <!-- <title>Church Prayer Requests</title> -->
+</head>
+<body>
+    <div>
+        <div id="container">
+			
+			<header>
+				<a href="{{ url_for('index') }}">
+					<img 
+					src="{{ url_for('static', filename='images/new.jpg') }}" alt="Church Logo" />
+				</a>
+				<p> New Celestial Church Of Christ </p>
+			</header>
+			
+        </div>
+			
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('about_us') }}"> About US</a></li>
+					<li><a href="{{ url_for('events') }}"> Event </a></li>
+					<li><a href="{{ url_for('contact_us') }}"> Contact US </a></li>
+                    <li><a href="{{ url_for('prayer_request') }}"> prayer_request </a></li>
+				</ul>
+			</nav>
+
+        <main>
+            <h1>Prayer Requests</h1>
+            
+            <ul>
+                {% for request in prayer_requests %}
+                    <li><strong>{{ request[1] }}:</strong> {{ request[2] }}</li>
+                {% endfor %}
+            </ul>
+
+            <h2>Submit a Prayer Request</h2>
+            
+            <form action="/submit_prayer_request" method="post">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required><br>
+
+                <label for="request_text">Prayer Request:</label>
+                <textarea id="request_text" name="request_text" rows="4" required></textarea><br>
+
+                <button type="submit">Submit Request</button>
+            </form>
+        </main>
+
+        <footer>
+			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2023. All Rights Reserved.</p>
+			<p><a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a></p>
+		</footer>
+    </div>
+</body>
+</html>
