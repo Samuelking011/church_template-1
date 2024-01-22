@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/NCCC.css') }}">
+		<title> New Celestial Church Of Christ </title>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<div>
+			<div id="container">
+			
+			<header>
+				<a href="{{ url_for('index') }}">
+					<img 
+					src="{{ url_for('static', filename='images/new.jpg') }}" alt="Church Logo" />
+				</a>
+				<p> New Celestial Church Of Christ </p>
+			</header>
+			
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('about_us') }}"> About US</a></li>
+					<li><a href="{{ url_for('events') }}"> Event </a></li>
+					<li><a href="{{ url_for('contact_us') }}"> Contact US </a></li>
+                    <li><a href="{{ url_for('prayer_request') }}"> prayer_request </a></li>
+					<li>
+						{% if current_user.is_authenticated %}
+						 <!-- Logout button when user is logged in -->
+						 <form action="{{ url_for('logout') }}" method="post">
+							<button type="submit"> Logout </button>
+						 </form>
+						 {% else %}
+						 <!-- Login and Register buttons for non-users -->
+						 <a href="{{ url_for('login') }}">Login</a>
+						 {% endif %}
+					</li>
+				</ul>
+			</nav>
+		
+		<main>
+		
+			<h2> The Church recognize following program </h2>
+				
+				<div class="mobile">
+					<p> Our Church Services Include: </p>
+						<ul>
+							<li> SUNDAY SERVICE </li>
+							<li> VICTORY SERVICE </li>
+							<li> SEEKERS' SERVICE </li>
+							<li> MERCY DAY SERVICE </li>
+							<li> POWER SERVICE </li>
+							<li> POWER VIGIL </li>
+						</ul>
+					
+					<p> Please contact us at <a href="tel:8327819400"> (832) 781-9400</a> or email us at  <a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a> for more details about our services. </p>
+				</div>
+				
+				<div class="desktop">
+					
+					<table>
+						<caption> Church Services </caption>
+							<tr>
+								<th> Programs </th>
+								<th> Date </th>
+								<th> Time </th>
+								<th> Location </th>
+							</tr>
+							
+							<tr>
+								<td> SUNDAY SERVICE </td>
+								<td> Every Sunday </td>
+								<td> 10:00am </td>
+								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+							</tr>
+							
+							<tr>
+								<td> VICTORY SERVICE </td>
+								<td> Every Tuesday </td>
+								<td> 7:00pm </td>
+								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+							</tr>
+							
+							<tr>
+								<td> SEEKERS' SERVICE </td>
+								<td> Every Wednesday </td>
+								<td> 9:00am </td>
+								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+							</tr>
+							
+							<tr>
+								<td> MERCY DAY SERVICE </td>
+								<td> Every Wednesday </td>
+								<td> 7:00pm </td>
+								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+							</tr>
+							
+							<tr>
+								<td> POWER SERVICE </td>
+								<td> Every Friday </td>
+								<td> 7:00pm </td>
+								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+							</tr>
+							
+							<tr>
+								<td> POWER VIGIL </td>
+								<td> Every Friday Night </td>
+								<td> 11:00pm </td>
+								<td> 8015 S Kirkwood Road, Houston TX 77072 </td>
+							</tr>
+					</table>
+								
+				</div>
+		</main>
+		
+		<footer>
+			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2023. All Rights Reserved.</p>
+			<p><a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a></p>
+		</footer>
+		
+	</div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+
+<html lang="en">
+	<head>
+		<link rel="stylesheet" href="{{ url_for('static', filename='css/NCCC.css') }}">
+		<title> New Celestial Church Of Christ </title>
+		<meta charset="utf-8">
+	</head>
+	
+	<body>
+		<div>
+			<div id="container">
+			
+			<header>
+				<a href="{{ url_for('index') }}">
+					<img 
+					src="{{ url_for('static', filename='images/new.jpg') }}" alt="Church Logo" />
+				</a>
+				<p> New Celestial Church Of Christ </p>
+			</header>
+			
+			</div>
+			
+			<nav>
+				<ul>
+					<li><a href="{{ url_for('about_us') }}"> About US</a></li>
+					<li><a href="{{ url_for('events') }}"> Event </a></li>
+					<li><a href="{{ url_for('contact_us') }}"> Contact US </a></li>
+                    <li><a href="{{ url_for('prayer_request') }}"> prayer_request </a></li>
+					<li>
+						{% if current_user.is_authenticated %}
+						 <!-- Logout button when user is logged in -->
+						 <form action="{{ url_for('logout') }}" method="post">
+							<button type="submit"> Logout </button>
+						 </form>
+						 {% else %}
+						 <!-- Login and Register buttons for non-users -->
+						 <a href="{{ url_for('login') }}">Login</a>
+						 {% endif %}
+					</li>
+				</ul>
+			</nav>
+		
+		<main>
+			<section>
+				<h2> Brief History - New Celestial Church of Christ </h2>
+					
+					<article>
+						<h4> The Church </h4>
+							<p> 
+								New Celestial Church of Christ is part of the Celestial Church of Christ spiritual, world-wide, united, indivisible Holy Church which came into the <br>
+								world from heaven by DIVINE ORDER on the 25th of November 2001 in Texas, United State through Superior Evangelish, Prophet, Titus Ogunnote Sheperd in charge.<br>
+								The Church (Celestial Church Of Christ) is well known with Parishes, Dioceses all over the world with its International Headquarters in Nigeria, <br>
+								with New Celestial Church of Christ one of the many Parishes located in the United States.<br>
+							</P>
+					</article>
+					
+					<article>
+						<h4> Vision of the Church </h4>
+							<p>
+								To evangelize the world through the proclamation of the Word – the Good News of the Messiah Jesus Christ, and of the Kingdom of God;<br>
+								in the mighty name of Jesus Christ, and of the Kingdom of God; in the mighty name of Jesus Christ, proclaiming deliverance to those bound by the shackles of Satan,<br>
+								healing the brokenhearted, the sick, the informed, restoring hope to the hopeless and those who are bound, <br>
+								while reinforcing the faith of all – both feeble and strong in the unfailing righteousness and faithfulness of God Almighty and Jesus Christ, the Lord & Savior.<br>
+							</p>
+					</article>
+					
+					<article>
+						<h4> Primary Mission </h4>
+							<ol>
+								<li>To worship God Almighty in holiness and reverence</li>
+								<li>To Preach the good news of the Messiah – Jesus Christ and the imminent Kingdom of God through evangelism, Bible Classes, Bible Lectures, organized spiritual forums, print and electronic media.</li>
+								<li>To prepare believers for the coming of the Lord Jesus Christ.</li>
+								<li>To work for the unity of all Christians</li>
+								<li>To organize and run schools, colleges, seminaries, and research centers.</li>
+								<li>Inculcation and restoration of Christian values into home/families, to encourage family cohesion, peace and stability in homes, neighborhoods, and nations through prayers, counseling and spiritual ministration.</li>
+								<li>Organize charities and relief operations.</li>
+								<li>Promote crime free and drug free environments.</li>
+							</ol>
+					</article>
+			</section>
+			<aside>
+				<h4> Purpose </h4>
+					<p> The purposes for which the church is organized are exclusively religious, charitable, and educational.</P>
+			</aside>
+		</main>
+		
+		<footer>
+			<p>&copy; Copyright © Celestial Church of Christ 1997 - 2023. All Rights Reserved.</p>
+			<p><a href="mailto:newcelestialparish@gmail.com"> newcelestialparish@gmail.com </a></p>
+		</footer>
+		
+	</div>
+</body>
+</html>
